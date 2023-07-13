@@ -34,16 +34,16 @@ std::unique_ptr<Coffee> CoffeeMakerFactory::get_coffee() {
     switch (choice)
     {
     case 1:
-        return std::make_unique<Coffee>(Cappuccino("Cappuccino"));
+        return std::make_unique<Cappuccino>("Cappuccino");
         break;
     case 2:
-        return std::make_unique<Coffee>(Espresso("Espresso"));
+        return std::make_unique<Espresso>("Espresso");
         break;
     default:
         break;
     }
 
-    return std::make_unique<Coffee>(Coffee("Regular"));
+    return std::make_unique<Coffee>("Regular");
 }
 
 } // end factory
