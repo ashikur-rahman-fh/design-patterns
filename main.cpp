@@ -1,7 +1,12 @@
 #include <iostream>
+#include <vector>
+#include <memory>
+
 #include <factory.hpp>
 #include <behavioral.hpp>
 #include <abstract_factory.hpp>
+#include <adapter.hpp>
+
 
 void abstructFactoryRunner() {
     int input;
@@ -41,7 +46,20 @@ void abstructFactoryRunner() {
     }
 }
 
+
+void adapterRunner() {
+    std::vector<std::shared_ptr<structural::ApiInterface>> apis = {
+        std::make_shared<structural::DemoApi>(),
+        std::make_shared<structural::LagacyAdapter>(),
+        std::make_shared<structural::LagacyClassAdapter>()
+    };
+
+    for (const auto api : apis) {
+        api -> run();
+    }
+}
+
 int main() {
-    abstructFactoryRunner();
+    adapterRunner();
     return 0;
 }

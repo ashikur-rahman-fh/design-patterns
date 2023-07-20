@@ -9,8 +9,10 @@
                 "-g",
                 "-Icreational",
                 "-Ibehavioral",
+                "-Istructural",
                 "creational/*.cpp",
                 "behavioral/*.cpp",
+                "structural/*.cpp",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
